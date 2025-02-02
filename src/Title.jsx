@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import Form from './App.jsx'
+import App from './App.jsx'
 
 function Title(){
-        const [name,setName]=useState("")
-    const getData=(data)=>{
-        setName(data)
-    };
+    const [name,setName]=useState("")
     return(
         <>
-        <Form onSubmit={getData}/>
+        <App setName={setName} name={name}/>
             <h1>Welcome {name}</h1>
         </>
     )

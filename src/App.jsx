@@ -1,24 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
-function App(props) {
-  const [name, setName] = useState("Swathi")
+function App({setName,name}) {
   const change = (event) => {
-    const newName = event.target.value;
     setName(event.target.value);
-  }
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    props.onSubmit(name);
   }
   return (
     <>
-      <h1>Vite + React</h1>
-      <form onSubmit={handleSubmit}>
-        <input onChange={change} value={name}></input>
-        <button type='submit'>Click me</button>
-      </form>
-
+    <h3>Enter your name in the input area</h3>
+      <input onChange={change} value={name}></input>
     </>
   )
 }
